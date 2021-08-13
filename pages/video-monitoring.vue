@@ -27,28 +27,44 @@
         <h4>Aucune caméra de connecté</h4>
       </div>
       <div class="col-auto">
+        <p>Pos X : {{ pos_x }}</p>
+        <p>Pos Y : {{ pos_y }}</p>
         <div class="controls">
           <div>
-            <button class="up" @click="moveCam('up')">
+            <button class="up" @click="pos_y = +pos_y + 10">
               <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAkUlEQVRYhe2USwqAMAwF5wCutXhRl15SrJ5GF1aQ4q82UYQMBEoJnZcsCoZh5FGG+gQH9KHc2/IK6IAp1AjUb8kd4IPYR2f1TWwnH1imLjd3qpvYk6+ohziTq4e4I1cLkSIXD/FELhYiR54dQkL+OISkPDlEgd6vFv+exVFjg9zkMesm2qvGw3QCaL5tGIbxU2aiCUdzRyJz1wAAAABJRU5ErkJggg=="
               />
             </button>
           </div>
           <div>
-            <button class="left" @click="moveCam('left')">
+            <button class="left" @click="pos_x = +pos_x - 10">
               <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAY0lEQVRYhe3WMQqEQBAF0YfojUzUzT2sezoNDDUw2dBg1kH4dYCugoamCaEcH8w15Rt29E/LJ6w48EUXeeSRR16SwXXhDixoSwua0gP/wajiChKRiEQk4i5Vn9LfiGpveXgvJ4vvPBivapXBAAAAAElFTkSuQmCC"
               />
             </button>
-            <button class="bottom" @click="moveCam('bottom')">
+            <button
+              class="reset"
+              @click="
+                pos_x = 0
+                pos_y = 0
+              "
+            >
               <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAkElEQVRYhe2UPQqAMAxG3wE6a/G0jh5Q/DlNXVKQSkVrWpc8CF1K3pcMAcMwDOOK+7P3COzAUEHeAzMw5T44YAWCvF5R7pPe2U10kjKgt4k4eQC2Jz01Q7yWa4YolmuE+Cz/EkJNXhJCXf4mRDX5kxDV5Xchmskj6VWrdT1vOW+i2eQpHlikmk2e0kkZhlHMAbgwR4XJY367AAAAAElFTkSuQmCC"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABgElEQVRYhe2WsU6DUBSGP1tqHFyh1UEHdVEfw6hL7dLH6FDjCzjpizSG1ecwxsGqhNUYd+1iTYrDPQQkhcKFW5b+yc1NOJzz/XC55wIr6csGXMCpy4ALBMBzXSZsgQeAB2zXYcIBxss00QL6wAh4AyYCD8crBpejB/gJYHIYMdAAbmOQMTAEjoA9gYbwTtVwYvAfYAA05Xp8/V+Atgl4D5gJ/CQRM74NW0RrPpgTL9KI1nQM9InWvLng3ixdA12dxJEYGJaAn0uNO51kT5IPSxg4INohhfUtyZslDGxIja+0GxoZyUEJcKj1RbWyDHzIvFvCwI7MnzoGnhJFdHQm84NOche1hXRloQ6sALWlCytP83BQzcieE7sUuI9qapXLIfohcROxU2CKauMXJuBt1AEUdsqwHVuoJ59K7MYEvMP/I3gfOAauYtdnAs/6yLXkxCBpw6fAa7cqMDUB3oFH4F7GbwV1UxX/+DxgyyQsrwkjv2JFTCS34VJNpDWilXLpD09ScbPfHTgIAAAAAElFTkSuQmCC"
               />
             </button>
-            <button class="right" @click="moveCam('right')">
+
+            <button class="right" @click="pos_x = +pos_x + 10">
               <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAcUlEQVRYhe3WMQ6CUBAG4S8+L+E9aEgo7DypNt6KK0BCqYXWxhDCI/BPvZuZZJslHJ0yY+eGC/qFW/6iwYQBXY2AgjteGHFNRCISkYgtRpzx/EYMaH8Nn9YoWpOCh0oniDzyyPcvZwNPKZ+3vJo87I83aNw8yHI8OR4AAAAASUVORK5CYII="
+              />
+            </button>
+          </div>
+          <div>
+            <button class="bottom" @click="pos_y = +pos_y - 10">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAAkElEQVRYhe2UPQqAMAxG3wE6a/G0jh5Q/DlNXVKQSkVrWpc8CF1K3pcMAcMwDOOK+7P3COzAUEHeAzMw5T44YAWCvF5R7pPe2U10kjKgt4k4eQC2Jz01Q7yWa4YolmuE+Cz/EkJNXhJCXf4mRDX5kxDV5Xchmskj6VWrdT1vOW+i2eQpHlikmk2e0kkZhlHMAbgwR4XJY367AAAAAElFTkSuQmCC"
               />
             </button>
           </div>
@@ -119,7 +135,31 @@ export default {
       videoList: [],
       currentVideo: null,
       connectToFernand: false,
-      manualNewCam: {}
+      manualNewCam: {},
+      pos_x: 0,
+      pos_y: 0
+    }
+  },
+  watch: {
+    currentVideo() {
+      this.pos_x = 0
+      this.pos_y = 0
+    },
+    pos_x() {
+      if (this.pos_x < 0) {
+        this.pos_x = 0
+      } else if (this.pos_x > 180) {
+        this.pos_x = 180
+      }
+      this.debounceRotateX()
+    },
+    pos_y() {
+      if (this.pos_y < 0) {
+        this.pos_y = 0
+      } else if (this.pos_y > 180) {
+        this.pos_y = 180
+      }
+      this.debounceRotateY()
     }
   },
   mounted() {
@@ -142,6 +182,10 @@ export default {
       })
     )
   },
+  created() {
+    this.debounceRotateX = this._.debounce(this.rotateX, 500)
+    this.debounceRotateY = this._.debounce(this.rotateY, 500)
+  },
   methods: {
     handleMsg(topic, datas) {
       switch (topic) {
@@ -159,12 +203,6 @@ export default {
             }
           }
       }
-    },
-    moveCam(dir) {
-      console.log("rotate X", this.pos_x)
-      this.$axios.$get(
-        `http://${this.currentCam.ip}/control?var=rotate_x&val=${this.pos_x}`
-      )
     },
     openManualAddCamModal() {
       this.$bvModal.show("manualAddCamModal")
@@ -187,6 +225,16 @@ export default {
       this.$nextTick(() => {
         this.$bvModal.hide("manualAddCamModal")
       })
+    },
+    rotateX() {
+      this.$axios.$get(
+        `http://${this.currentVideo.ip}/control?var=rotate_x&val=${this.pos_x}`
+      )
+    },
+    rotateY() {
+      this.$axios.$get(
+        `http://${this.currentVideo.ip}/control?var=rotate_y&val=${this.pos_y}`
+      )
     }
   }
 }
