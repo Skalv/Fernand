@@ -1,0 +1,78 @@
+$activeColor: #7f89a2;
+$activeBorder: #71b90f;
+$borderColor: #e0e2e9;
+$white: #ffffff;
+$startGreen: #71b90f;
+$endGreen: #0fb966;
+
+.Sidebar {
+  border-right: 1px solid $borderColor;
+  padding-right: 0;
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $activeColor;
+    opacity: 0.4;
+    padding: 10px;
+    margin: 20px 0;
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    p {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 0.8em;
+    }
+    &.nuxt-link-exact-active,
+    &:hover {
+      opacity: 1;
+      border-color: $startGreen;
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 767.98px) {
+  .Sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: $white;
+    border-top: 2px solid $borderColor;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .nav-item {
+      margin: 0;
+      width: 100%;
+      &:last-child {
+        border-right: 0;
+      }
+      &.nuxt-link-exact-active {
+        color: $white;
+        background: linear-gradient(to bottom, $startGreen, $endGreen);
+      }
+    }
+    .nav-item {
+      &.nuxt-link-exact-active,
+      &:hover {
+        border: none;
+      }
+    }
+  }
+}
+
+// small devices (phone, 426px and up)
+@media (max-width: 424.99px) {
+  .Sidebar {
+    .nav-item {
+      p {
+        font-size: 0.7em;
+      }
+    }
+  }
+}

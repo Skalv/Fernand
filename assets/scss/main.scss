@@ -1,0 +1,77 @@
+/********************/
+/*VARIABLES GLOBALES*/
+/********************/
+
+/*COULEURS*/
+$green: #71b90f;
+$darkgreen: #5b960b;
+$dryGreen: #d7dd2c;
+$dryGreenText: #a7ab3b;
+$startGreen: #0fb966;
+$endGreen: #71b90f;
+$mutedTitle: #7f89a2;
+$mutedSub: #b3bbc9;
+$background: #f8f9fd;
+$toolsColor: #a4a4a4;
+$switchOnBG: #77c2bb;
+$switchOffBG: #e2e2e2;
+$switchOnBtn: #009688;
+$switchOffBtn: #ffffff;
+$loaderBG: #dcdcdc;
+$emptyDash: #d1dee3;
+
+// /*AUTRES BALISES ET CLASSES*/
+// a, button, li, img, div, h1, h2, h3, h4, p, span{
+//   transition: all 0.35s;
+// }
+
+// button.btn-primary, a.btn-primary, input[type="button"], input[type="submit"]{
+//   background: #9bb90f; /* Old browsers */
+//   background: -moz-linear-gradient(left, #9bb90f 0%, #71b90f 100%); /* FF3.6-15 */
+//   background: -webkit-linear-gradient(left, #9bb90f 0%,#71b90f 100%); /* Chrome10-25,Safari5.1-6 */
+//   background: linear-gradient(to right, #9bb90f 0%,#71b90f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+//   border: none;
+//   border-radius: 200px;
+//   padding: 10px 20px;
+//   transition: all 0.35s;
+// }
+// button.btn-primary:hover, a.btn-primary:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover {
+//   background-color: #5b960b;
+//   box-shadow: 0px 14px 45px -5px rgba(111, 184, 27, 0.8);
+//   -webkit-transform: scale(1.02) translateY(-2px);
+//   transform: scale(1.02) translateY(-2px);
+// }
+
+// a{
+//   text-decoration: none;
+//   color: $green;
+//   &:hover{
+//     color: $dryGreenText;
+//   }
+// }
+
+// .left{ float: left; }
+// .right{ float: right; }
+
+// /*************************/
+// /*/fin VARIABLES GLOBALES*/
+// /*************************/
+
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+@import "layouts/default.scss";
+@import "components/header.scss";
+@import "components/sidebar.scss";
+@import "components/widgets.scss";
+@import "pages/index.scss";
+@import "pages/videomonitoring.scss";
+// @import 'components/forms.scss';
+// @import 'pages/settings.scss';
+// @import 'pages/applications.scss';
+// @import 'pages/subscribe-connection.scss';
+
+*,
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}

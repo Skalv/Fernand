@@ -1,0 +1,44 @@
+form label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    line-height: 16px;
+    height: 24px;
+    color: #0b4c65;
+    cursor: text;
+}
+
+form input:not([type]):focus:not([readonly]), form input[type="date"]:focus:not([readonly]), form input[type="datetime-local"]:focus:not([readonly]), form input[type="datetime"]:focus:not([readonly]), form input[type="email"]:focus:not([readonly]), form input[type="number"]:focus:not([readonly]), form input[type="password"]:focus:not([readonly]), form input[type="search"]:focus:not([readonly]), form input[type="tel"]:focus:not([readonly]), form input[type="text"]:focus:not([readonly]), form input[type="time"]:focus:not([readonly]), form input[type="url"]:focus:not([readonly]), form textarea:focus:not([readonly]){
+    color: #3294f0;
+    border-bottom: 1px solid #3294f0;
+    box-shadow: 0 1px 0 0 #3294f0;
+    background: transparent;
+}
+
+form input.form-control.isFulled{
+    color: #3294f0;
+    border-bottom: 1px solid #3294f0;
+    box-shadow: 0 1px 0 0 #3294f0;
+}
+
+form input:not([type]), form input[type="date"], form input[type="datetime-local"], form input[type="datetime"], form input[type="email"], form input[type="number"], form input[type="password"], form input[type="search"], form input[type="tel"], form input[type="text"], form input[type="time"], form input[type="url"], form textarea, form .dropdown-wrapper, form input:not([type]), form input[type="date"], form input[type="datetime-local"], form input[type="datetime"], form input[type="email"], form input[type="number"], form input[type="password"], form input[type="search"], form input[type="tel"], form input[type="text"], form input[type="time"], form input[type="url"], form textarea {
+    cursor: pointer;
+    color: #0b4c65;
+    background: transparent;
+    border: none;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: medium;
+    border-bottom: 1px solid #0b4c65;
+    border-radius: 0;
+    outline: none;
+    height: 36px;
+    width: 100%;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all .3s;
+}

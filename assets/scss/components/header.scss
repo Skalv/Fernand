@@ -1,0 +1,91 @@
+$dividerGrey: #e5e5e5;
+$mutedTitle: #7a7a7a;
+$mutedValue: #bcbcbc;
+
+.Header {
+  display: flex;
+  background-color: white;
+  height: 70px;
+  border-bottom: 1px solid #eaeaea;
+  align-items: center;
+  .Brand {
+    text-align: left;
+    img {
+      height: 50px;
+    }
+  }
+  .Weather {
+    display: flex;
+    .Weather_item {
+      position: relative;
+      h6 {
+        color: $mutedTitle;
+        text-align: center;
+        font-size: 0.8em;
+        margin-bottom: 0;
+      }
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 47px;
+        background: $dividerGrey;
+        right: -1px;
+        top: 0;
+      }
+      .data {
+        display: flex;
+        align-items: center;
+        padding: 0 2em;
+        p {
+          font-size: 1.6em;
+          font-weight: bold;
+          margin-bottom: 0;
+          .muted {
+            color: $mutedValue;
+            font-weight: normal;
+          }
+        }
+        img {
+          height: 1.6em;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .Account {
+    text-align: right;
+    .muted {
+      color: $mutedTitle;
+    }
+    .nav-item {
+      margin: 0;
+      padding: 0 1em;
+      display: inline;
+      img {
+        height: 25px;
+      }
+    }
+  }
+}
+
+// small devices (phone, 426px and up)
+@media (max-width: 424.99px) {
+  .Header {
+    .Weather {
+      .Weather_item {
+        .data {
+          padding: 0 0.3em;
+        }
+      }
+    }
+    .Account {
+      .nav-item {
+        padding: 0 0.2em;
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+}

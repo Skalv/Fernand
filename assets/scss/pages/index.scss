@@ -1,0 +1,241 @@
+.title-widget {
+  background-color: $background;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 40px;
+  h2 {
+    display: block;
+    text-transform: uppercase;
+    color: $mutedTitle;
+    font-size: 1.5em;
+    font-family: "Verdana";
+    color: rgb(127, 137, 162);
+  }
+  p {
+    color: $mutedSub;
+  }
+}
+
+.Dashboard {
+  .Widgets {
+    margin-bottom: 4em;
+    .Widget {
+      position: relative;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      margin: 0 35px 30px 10px;
+      padding: 1em 3em;
+      &.empty {
+        cursor: pointer;
+        border: 5px dashed $emptyDash;
+        color: $emptyDash;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0);
+        &:hover {
+          border: 5px dashed darken($emptyDash, 10%);
+          color: darken($emptyDash, 10%);
+        }
+        h3 {
+          font-size: 1.5em;
+          margin: 0 10px;
+          font-weight: bold;
+        }
+      }
+      &:not(.empty)::before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        height: calc(100% + 6px);
+        background: linear-gradient(to top, $startGreen, $endGreen);
+        border-radius: 8px;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.2s;
+      }
+      &:hover:not(.empty) {
+        &::before {
+          opacity: 1;
+        }
+      }
+      .tools {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .switch {
+          position: relative;
+          margin-right: 30px;
+          margin-left: -2em;
+          flex: 1;
+          input {
+            top: -6px;
+            right: 0;
+            bottom: 0;
+            left: -6px;
+            opacity: 0;
+            position: absolute;
+            width: 62px;
+            height: 26px;
+            z-index: 100;
+            cursor: pointer;
+          }
+          label {
+            display: block;
+            width: 35px;
+            height: 10px;
+            position: relative;
+            background: $switchOffBG;
+            border-radius: 30px 30px 30px 30px;
+            transition: all 0.5s ease;
+          }
+          input ~ label i {
+            display: block;
+            height: 17px;
+            width: 17px;
+            position: absolute;
+            left: 0px;
+            top: -4px;
+            z-index: 2;
+            border-radius: inherit;
+            background: $switchOffBtn;
+            box-shadow: -2px 3px 2px 1px rgba(226, 226, 226, 0.5),
+              0 0 2px 1px rgba(226, 226, 226, 0.5);
+            transition: all 0.5s ease;
+            z-index: 2;
+          }
+          input:checked ~ label {
+            background: $switchOnBG;
+          }
+          input:checked ~ label i {
+            left: 20px;
+            background: $switchOnBtn;
+            transition: all 0.5s ease;
+            box-shadow: none;
+          }
+        }
+        .options {
+          margin-right: -2em;
+          img {
+            cursor: pointer;
+            margin-left: 5px;
+            width: 22px;
+          }
+        }
+      }
+      .body {
+        flex: 1;
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3 {
+          font-size: 1.2em;
+          font-weight: bold;
+          margin-bottom: 0.8em;
+        }
+        .loader {
+          content: "";
+          height: 4px;
+          background-color: $loaderBG;
+          width: 100%;
+          position: relative;
+          margin-bottom: 0.5em;
+          span {
+            content: "";
+            position: absolute;
+            height: 8px;
+            top: -2px;
+            left: 0;
+            border-radius: 8px;
+            background: linear-gradient(to right, $startGreen, $endGreen);
+          }
+        }
+        .status {
+          font-size: 0.9em;
+          color: rgba(0, 0, 0, 0.3);
+        }
+      }
+      .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 0.8em;
+        text-align: center;
+        color: $toolsColor;
+      }
+      &.active {
+        box-shadow: 0px 13px 31px 0px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+  .Graphs {
+    .Graph {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 8px 8px 8px 1px rgba(226, 226, 226, 0.5),
+        0 0 4px 1px rgba(226, 226, 226, 0.5);
+      padding: 2em;
+      margin-bottom: 3em;
+      h4 {
+        margin-bottom: 0;
+      }
+      span {
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 0.9em;
+      }
+      .chartjs_container {
+        margin-top: 2em;
+        position: relative;
+      }
+    }
+  }
+}
+@media (max-width: 1079.98px) {
+  .Dashboard {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .Dashboard {
+    padding: 0 15px;
+    margin-bottom: 110px;
+    .Widgets {
+      .Widget {
+        padding: 0 1em;
+        margin: 0 15px 30px 15px;
+        .tools {
+          height: 3em;
+          padding: 0 1em;
+          .switch {
+            margin-left: 0;
+          }
+          .options {
+            margin-right: 0;
+          }
+        }
+        .body {
+          margin: 10px 0;
+          h3 {
+            align-self: flex-start;
+            padding-left: 65px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// small devices (phone, 426px and up)
+@media (max-width: 424.99px) {
+  .Widgets {
+    .WidgetContainer {
+      width: 100%;
+    }
+  }
+}

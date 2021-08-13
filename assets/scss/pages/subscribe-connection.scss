@@ -1,0 +1,69 @@
+.container-connection {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.logo-connection{
+  top: 20px;
+  left: 25px;
+  position: absolute;
+}
+
+.bloc-connection{
+  position: relative;
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffffff 0%, #e9eaee 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#e9eaee 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ffffff 0%,#e9eaee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border-radius: 3px;
+  border-top: 10px solid $green;
+  box-shadow: 0px 20px 81px 0px rgba(0, 0, 0, 0.29);
+  padding-top: 30px;
+  .text-connection{
+    padding: 60px 40px 60px 100px;
+    h3{
+      font-size: 2em;
+      color: #3c484e;
+      font-weight: 700;
+      position: relative;
+      padding-left: 50px;
+      &::before{
+        content : "";
+        width: 30px;
+        height: 2px;
+        background-color: rgb(84, 84, 84);
+        position: absolute;
+        left: 0;
+        top: 50%;
+      }
+    }
+    p{
+      font-size: 0.9em;
+      color: #9d9d9d;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .logo-connection{
+    position: relative;
+    top: 15px;
+    left: 25px;
+    margin-bottom: 30px;
+  }
+  .bloc-connection{
+    width: 100%;
+    box-shadow: none;
+    max-height: 730px;
+    background: #f8f9fd; /* Old browsers */
+    border: none;
+    padding-top: 0;
+    .text-connection{
+      padding: 0px 45px 30px 45px;
+    }
+  }
+}
